@@ -34,7 +34,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <!--я вставил (вставить в роут: admin.user.index)-->
+                        <li class="nav-item">
+                                <a  href="{{ route('admin.users.index') }}">Manager User<a>
+                            </li>
+                            <!--конец-->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -74,6 +78,7 @@
         </nav>
 
         <main class="py-4">
+            @include('partial.alerts')<!--подключили вид с ошибками-->
             @yield('content')
         </main>
     </div>

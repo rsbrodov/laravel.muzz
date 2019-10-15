@@ -19,7 +19,7 @@
                       {{ csrf_field() }}
                       <input type="text" name="name" placeholder>
                       <select name="type">
-                        <option value="1">Продукт</option>
+                        <option value="1">Товар</option>
                         <option value="0">услуга</option>
                       </select>
                       <button type="submit" class="btn btn-success btn-sm">Create</button>

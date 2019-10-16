@@ -14,13 +14,13 @@
                 <div class="card-header">Manager products</div>
 
                 <div class="card-body">
-                    <form action="{{route('admin.product.store')}}" method="post">
+                    <form action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
                       @csrf
                       {{ csrf_field() }}
                       <input type="text" name="name" placeholder="name product">
                       <input type="text" name="price" placeholder="цена">
                       <input type="text" name="brand" placeholder="бренд">
-                      <input type="text" name="description" placeholder="описание">
+                      <textarea name="description" placeholder="описание"></textarea>
                       <select name="type">
                         <option value="1">Товар</option>
                         <option value="0">услуга</option>
@@ -34,6 +34,8 @@
                           <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                       </select>
+
+                      <input type="file" name="image">
                       <button type="submit" class="btn btn-success btn-sm">Create</button>
                     </form>
                 </div>

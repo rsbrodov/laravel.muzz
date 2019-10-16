@@ -39,7 +39,7 @@
                             {{ $product->category->name }}
                           </th>
                           <th>
-                            <a href="{{ route('admin.product.create') }}">
+                            <a href="{{ route('admin.product.edit', ['product' => $product->id]) }}">
                               <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                             </a>
 

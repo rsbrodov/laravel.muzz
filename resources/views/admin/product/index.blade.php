@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Manager products</div>
+                <div class="card-header"><h2>Manager products</h2></div>
 
                 <div class="card-body">
                     <table class="table">
@@ -17,7 +17,7 @@
                           <th scope="col">Category</th>
                           <th scope="col">
                              <a href="{{ route('admin.product.create') }}" class="float-left">
-                            <button type="button" class="btn btn-primary btn-sm">Create</button>
+                            <button type="button" class="btn btn-success btn-sm">Create</button>
                           </a>
                           </th>
                         </tr>

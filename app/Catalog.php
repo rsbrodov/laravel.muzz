@@ -10,6 +10,6 @@ class Catalog extends Model
     protected $fillable = ['name', 'type'];
 
     public function productOfCategory(){
-    	return $this->hasMany('App\Product');
+    	return $this->hasMany('App\Product', 'category_id');
     }
 }

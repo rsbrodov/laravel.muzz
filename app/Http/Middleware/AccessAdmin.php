@@ -19,7 +19,7 @@ class AccessAdmin
         if(Auth::user()->hasAnyRole('admin')){//можем указать некольких, добавим s и в квадратных скобках массива прописать доступ всех пользователей
             return $next($request);
         }
-        return redirect('home');
+        return redirect('main');
         
     }
 }

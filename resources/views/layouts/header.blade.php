@@ -10,10 +10,8 @@
         <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ URL::asset('css/css.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" type="text/css">
-        <link href="/template/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/template/css/main.css" rel="stylesheet">
-        <link href="../template/css/css.css" rel="stylesheet">
-        <link href="/template/css/cssmusic.css" rel="stylesheet">
+        
+        <link href="{{ URL::asset('css/music.css') }}" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <!-- Шрифты фонт авесом последней версии -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -52,7 +50,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/">Muzza inc</a>
+      <a class="navbar-brand" href="{{ route('main') }}">Muzza inc</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -70,7 +68,22 @@
                                         </li>
          @if (Route::has('login'))
                     @auth
-                        <li><a class="nvtt" href="{{ url('/home') }}"><span class="glyphicon glyphicon-log-in"></span> Home</a><li>
+                        <li><a class="nvtt" href="{{ route('home') }}"><span class="glyphicon glyphicon-log-in"></span> Аккаунт</a><li>
+
+
+
+
+                            <a class="nvtt" href="{{ route('main') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Выход') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+
                     @else                   
         <li><a class="nvtt" href="{{ url('login') }}"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li> 
         @endauth

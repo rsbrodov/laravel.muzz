@@ -11,7 +11,7 @@ class ImageController extends Controller
     }
 
     public function upload(Request $request){
-    	$request->file('image')->store('uploads/products', 'public');
+    	$request->file('sound')->store('uploads/sounds', 'public');
     	return redirect('/image');
     }
 

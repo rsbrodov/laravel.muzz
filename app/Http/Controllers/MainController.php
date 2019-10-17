@@ -9,7 +9,7 @@ use App\Music;
 class MainController extends Controller
 {
     public function index(){
-    	$musics = Music::get();
+    	$musics = Music::inRandomOrder()->take(4)->get();
     	$services = Product::where('type', 0)->inRandomOrder()->take(4)->get();
     	$products = Product::where('type', 1)->inRandomOrder()->take(4)->get();
     	return view('main', compact('musics', 'services', 'products'));
